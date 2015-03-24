@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "ferry": "ferryjs/ferry#development",
+    "finalhandler": "^0.3.4",
     "router": "^1.0.0"
   },
   "devDependencies": {
