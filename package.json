@@ -1,0 +1,21 @@
+{
+  "name": "ferry-basic-router",
+  "version": "1.0.0",
+  "description": "Basic router adapter for FerryJS.",
+  "license": "MIT",
+  "main": "lib/BasicRouter",
+  "scripts": {
+    "test": "mocha",
+    "build": "babel src --out-dir lib --source-maps",
+    "watch": "babel src --out-dir lib --watch --source-maps",
+    "postinstall": "npm run build",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "ferry": "ferryjs/ferry#development",
+    "router": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel": "^4.7.16"
+  }
+}
