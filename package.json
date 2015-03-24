@@ -1,5 +1,5 @@
 {
-  "name": "ferry-basic-router",
+  "name": "ferry-router-basic",
   "version": "1.0.0",
   "description": "Basic router adapter for FerryJS.",
   "license": "MIT",
