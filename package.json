@@ -1,15 +1,19 @@
 {
   "name": "ferry-router-basic",
   "version": "1.0.0",
-  "description": "Basic router adapter for FerryJS.",
+  "description": "Basic router engine adapter for Ferry.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferryjs/ferry-router-basic"
+  },
   "main": "lib/BasicRouter",
   "scripts": {
     "test": "mocha",
     "build": "babel src --out-dir lib --source-maps",
-    "watch": "babel src --out-dir lib --watch --source-maps",
-    "postinstall": "npm run build",
-    "prepublish": "npm run build"
+    "watch": "npm run build -- --watch",
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "ferry": "ferryjs/ferry#development",
