@@ -14,9 +14,9 @@ class BasicRouterAdapter extends Router {
     this.app = new BasicRouter();
   }
 
-  route(action, resource) {
+  route(action, resourceType) {
 
-    let collection = this.ferry.storage.models[resource.toLowerCase()];
+    let collection = this.ferry.storage.getModel(resourceType);
 
     // @todo Remove Waterline dependency.
     switch (action) {
@@ -97,18 +97,18 @@ class BasicRouterAdapter extends Router {
     let basicRouter = new BasicRouter();
 
     // @todo Rework routes definition.
-    for (let resource in routes) {
+    for (let resourceType in routes) {
 
       let resourceRouter = new BasicRouter();
-      let basePath = routes[resource].basePath;
+      let basePath = routes[resourceType].basePath;
 
-      for (let action in routes[resource].actions) {
+      for (let action in routes[resourceType].actions) {
 
-        let method = routes[resource].actions[action].method;
-        let route = routes[resource].actions[action].route;
+        let method = routes[resourceType].actions[action].method;
+        let route = routes[resourceType].actions[action].route;
 
         resourceRouter[method](route, function (req, res) {
-          self.route(action, resource)(req, res);
+          self.route(action, resourceType)(req, res);
         });
 
       }
